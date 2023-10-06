@@ -15,7 +15,7 @@ environment {
                  echo "----------- build complted ----------"
             }
         }
-
+    }
      stage("test"){
             steps{
                 echo "----------- unit test started ----------"
@@ -48,3 +48,4 @@ environment {
         }
 }
    }
+}
