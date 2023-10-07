@@ -1,5 +1,5 @@
 def registry = 'https://e2eproject.jfrog.io'
-def registry = 'e2eproject.jfrog.io/valaxy-docker-local/ttrend'
+def imageName = 'e2eproject.jfrog.io/valaxy-docker-local/ttrend'
 def version = '2.1.2'
 
 pipeline {
@@ -79,7 +79,7 @@ environment {
         }   
     }   
 
-  stage(" Docker Build ") {
+      stage(" Docker Build ") {
       steps {
         script {
            echo '<--------------- Docker Build Started --------------->'
@@ -89,7 +89,7 @@ environment {
       }
     }
 
-            stage (" Docker Publish "){
+       stage (" Docker Publish "){
         steps {
             script {
                echo '<--------------- Docker Publish Started --------------->'  
