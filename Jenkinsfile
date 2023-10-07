@@ -105,7 +105,7 @@ environment {
        steps {
          script {
             echo '<--------------- Deploy Started --------------->'
-            sh './k8s/deploy.sh'
+            sh './deploy.sh'
             echo '<--------------- Helm deploy Ends --------------->'
          }
        }
