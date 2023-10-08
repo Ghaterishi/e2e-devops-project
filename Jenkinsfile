@@ -53,7 +53,7 @@ environment {
        }
    }
 
-     stage("Jar Publish") {
+     stage("Jar Publish to Jfrog") {
         steps {
             script {
                     echo '<--------------- Jar Publish Started --------------->'
@@ -89,7 +89,7 @@ environment {
       }
     }
 
-       stage (" Docker Publish "){
+       stage (" Docker Publish to Jfrog "){
         steps {
             script {
                echo '<--------------- Docker Publish Started --------------->'  
@@ -101,11 +101,11 @@ environment {
         }
     }
 
-     stage(" Deploy ") {
+     stage(" Deploy on AWS EKS") {
        steps {
          script {
-            echo '<--------------- Deploy Started --------------->'
-            sh './deploy.sh'
+            echo '<--------------- Helm Deploy Started --------------->'
+            sh 'helm install ttrend ttrend-0.1.0.tgz'
             echo '<--------------- Helm deploy Ends --------------->'
          }
        }
